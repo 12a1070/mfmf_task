@@ -25,14 +25,13 @@ class PropertiesController < ApplicationController
   # POST /properties or /properties.json
   def create
     @property = Property.new(property_params)
-
-    respond_to do |format|
+    if params[:back]
+      render :new
+    else
       if @property.save
-        format.html { redirect_to @property, notice: "新しい物件を登録しました" }
-        format.json { render :show, status: :created, location: @property }
+        redirect_to properties_path,notice:"物件情報を登録しました"
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @property.errors, status: :unprocessable_entity }
+      render :new
       end
     end
   end
