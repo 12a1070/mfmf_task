@@ -15,10 +15,10 @@
   </thead>
 
   <tbody>
-    <% @properties.each do |property| %>
+    <% @property.each do |property| %>
       <tr>
         <td><%= property.name %></td>
-        <td><%= property.rent.to_s(:delimited) %>円</td>
+        <td><%= property.rent %>円</td>
         <td><%= property.address %></td>
         <td><%= property.age %>年</td>
         <td><%= property.remarks %></td>

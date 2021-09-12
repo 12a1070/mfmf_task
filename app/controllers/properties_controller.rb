@@ -3,7 +3,7 @@ class PropertiesController < ApplicationController
 
   # GET /properties or /properties.json
   def index
-    @properties = Property.all
+    @property = Property.all
   end
 
   # GET /properties/1 or /properties/1.json
@@ -66,6 +66,6 @@ class PropertiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def property_params
-      params.require(:property).permit(:name, :rent, :address, :age, :remarks)
+      params.require(:property).permit(:name, :rent, :address, :age, :remarks,stations_attributes: [:id, :line, :station, :time])
     end
 end

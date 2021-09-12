@@ -44,6 +44,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 # 個人導入
   gem 'better_errors'
+  gem 'pry-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
